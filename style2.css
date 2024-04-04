@@ -498,6 +498,19 @@ img {
   right: 1rem;
 }
 
+/* ABOUT PAGE BANNER MOBILE */
+@media screen and (max-width: 520px) {
+  .aboutBanner_left {
+    display: none;
+  }
+  .aboutBanner_right h1 {
+    font-size: 4rem;
+  }
+  .aboutBanner_right ul li a {
+    font-size: 1.5rem;
+  }
+}
+
 /* LATEST STYLE SECTION */
 .latestSection {
   padding: 3rem;
@@ -506,23 +519,24 @@ img {
 
 .latestSection h1 {
   color: var(--clr-primary);
-  width: 700rem;
   font-size: 5rem;
+  font-weight: 700;
 }
 .latestSection p {
   color: var(--clr-semilight);
+  margin-bottom: 2em;
 }
 
 .latestSection_wrapper {
   display: grid;
-  grid-template-columns: 40rem 40rem 40rem;
-  gap: 5rem;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .latestSection_card {
   background-color: var(--clr-light);
   max-width: 40rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
 
 .latestSection_card img {
@@ -546,6 +560,115 @@ img {
   color: var(--clr-dark);
   font-weight: 500;
   margin-bottom: 4rem;
+}
+/* LATEST STYLE MOBILE */
+@media screen and (max-width: 520px) {
+  .latestSection_wrapper {
+    grid-template-columns: 1fr;
+  }
+  .latestSection h1::after {
+    display: none;
+  }
+}
+
+/* catalog page banner */
+.catalogBanner_bg {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./img/catalog-banner.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* to center the text */
+  display: flex;
+  font-display: column;
+  justify-content: center;
+  text-align: center;
+}
+.catalogBanner h1 {
+  font-size: 7rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+
+.catalogBanner {
+  font-size: 3rem;
+  font-weight: 2.5rem;
+}
+
+/* INTERIOR PACKAGE */
+.package_wrapper h2 {
+  color: var(--clr-primary);
+  font-size: 6rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 3rem;
+  display: flex;
+  font-display: column;
+  justify-content: center;
+}
+.package_theme {
+  padding: 5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.package_left {
+  width: 500rem;
+  margin-left: 20rem;
+  margin-top: 5rem;
+}
+
+.package_left img {
+  width: 70rem;
+}
+.package_right h2 {
+  color: var(--clr-primary);
+  display: flex;
+  font-size: 6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-left: 6rem;
+  height: -20px;
+}
+.package_right p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  text-align: justify;
+}
+.package_theme:nth-child(odd) {
+  background-color: var(--clr-semilight);
+  flex-direction: row-reverse;
+  display: flex;
+}
+
+/* UPDATES */
+
+.Container h1 {
+  color: var(--clr-primary);
+  font-size: 7rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+
+.updateBanner_right {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.updateBanner_left {
+  display: flex;
+  margin-bottom: 5rem;
+  font-size: 1.5rem;
+}
+.updateBanner_left p {
+  width: 100rem;
+  font: size 2rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 /* repeatable */
