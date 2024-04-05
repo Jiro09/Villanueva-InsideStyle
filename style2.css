@@ -572,6 +572,7 @@ img {
 }
 
 /* catalog page banner */
+
 .catalogBanner_bg {
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
@@ -583,10 +584,11 @@ img {
   background-repeat: no-repeat;
   /* to center the text */
   display: flex;
-  font-display: column;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
+
 .catalogBanner h1 {
   font-size: 7rem;
   font-weight: 700;
@@ -599,20 +601,27 @@ img {
 }
 
 /* INTERIOR PACKAGE */
+
 .package_wrapper h2 {
   color: var(--clr-primary);
   font-size: 6rem;
   font-weight: 700;
   text-align: center;
   padding: 3rem;
+}
+
+.package_wrapper {
   display: flex;
-  font-display: column;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .package_theme {
   padding: 5rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 3rem;
+  max-width: 1500px;
+  width: 100%;
+  align-items: center;
 }
 
 .package_left {
@@ -639,36 +648,221 @@ img {
   text-align: justify;
 }
 .package_theme:nth-child(odd) {
+  position: relative;
   background-color: var(--clr-semilight);
   flex-direction: row-reverse;
   display: flex;
 }
+.package_theme:nth-child(odd)::after,
+.package_theme:nth-child(odd)::before {
+  content: "";
+  top: 0;
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: var(--clr-semilight);
+  right: 100%;
+}
+.package_theme:nth-child(odd)::before {
+  left: 100%;
+}
+
+@media (max-width: 520px) {
+  .package_theme {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+  }
+  .package_theme img {
+    display: none;
+  }
+
+  .package_theme:nth-child(odd) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px;
+  }
+}
 
 /* UPDATES */
 
-.Container h1 {
+.updateSection h1 {
   color: var(--clr-primary);
+  text-align: center;
   font-size: 7rem;
+  margin-bottom: 20px;
   font-weight: 700;
+}
+
+.updateBanner {
+  padding: 50px 0;
+}
+
+.updateBanner_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.updateSection {
+  padding: 40px 0;
+  max-width: 500px;
+  width: 100;
+}
+
+@media (max-width: 520px) {
+  .updateBanner_wrapper {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+}
+
+/* updates section 2 */
+.updateSection2 {
+  padding: 50px 0;
+}
+.updateSection2 h2 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  color: var(--clr-secondary);
+  font-weight: 800;
+}
+
+.updateSection2_wrapper {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-gap: 50px;
+}
+.update_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+.update_cards .card {
+  padding: 30px;
+  background-color: var(--clr-semilight);
+}
+.update_cards .card a {
+  font-size: 4rem;
+  color: var(--clr-dark);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.update_cards .card h4 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--clr-dark);
+}
+.update_right ul li {
+  margin-bottom: 20px;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* updates section 3 */
+
+.updateSection3 h2 {
+  color: var(--clr-primary);
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 800;
   display: flex;
   justify-content: center;
 }
 
-.updateBanner_right {
-  display: flex;
-  flex-direction: row-reverse;
+.updateSection3 {
+  padding: 10px;
 }
-.updateBanner_left {
-  display: flex;
-  margin-bottom: 5rem;
-  font-size: 1.5rem;
+
+.updateSection3_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
-.updateBanner_left p {
-  width: 100rem;
-  font: size 2rem;
+.updateSection3_wrapper ul {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+}
+.updateSection3_wrapper {
+  width: 100;
+}
+.updateSection3_wrapper ul li a {
+  color: var(--clr-dark);
+}
+.updateSection3_wrapper img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* contacts page */
+
+.contactPage {
+  padding: 50px 0;
+}
+
+.contactPage h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.contactPage h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+.contacPage_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+.contact__form input,
+.contact__form textarea {
+  border: none;
+  background-color: var(transparent);
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding: 10px 16px;
+}
+
+.contact__form button {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 700;
+  letter-spacing: 1rem;
+}
+.contact__info {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  padding: 40px;
+}
+
+.contact__info ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.contact__info ul li a {
+  color: var(--clr-secondary);
+  font-size: 2.5rem;
+}
+
+@media (max-width: 520px) {
+  .contactPage {
+    flex-direction: column;
+  }
 }
 
 /* repeatable */
